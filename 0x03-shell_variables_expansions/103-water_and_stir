@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 -c 'print((lambda n:("bestchol"[0] if n==0 else "".join("bestchol"[(n//(8**k))%8] for k in range(int(__import__("math").log(n,8)),-1,-1))))(sum("water".index(c)*(5**i) for i,c in enumerate(reversed(__import__("os").environ["WATER"])))+sum("stir".index(c)*(4**i) for i,c in enumerate(reversed(__import__("os").environ["STIR"]))))'
+python3 -c 'import os,math;W=sum("water".index(c)*5**i for i,c in enumerate(reversed(os.environ["WATER"])));S=sum("stir".index(c)*4**i for i,c in enumerate(reversed(os.environ["STIR"])));n=W+S;print("".join("bestchol"[(n//(8**k))%8] for k in range(int(math.log(n,8)),-1,-1)))'
